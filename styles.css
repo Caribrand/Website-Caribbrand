@@ -302,7 +302,7 @@ pre.w-code-block code {
 
 
 .w-webflow-badge > img {
-  visibility: visible !important;
+  visibility: invisible !important;
   opacity: 1 !important;
   vertical-align: middle !important;
   display: none !important;
