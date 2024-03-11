@@ -300,12 +300,91 @@ pre.w-code-block code {
   all: inherit;
 }
 
+.w-webflow-badge, .w-webflow-badge * {
+  z-index: auto;
+  visibility: visible;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  float: none;
+  clear: none;
+  box-shadow: none;
+  opacity: 1;
+  direction: ltr;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  text-align: inherit;
+  letter-spacing: inherit;
+  -webkit-text-decoration: inherit;
+  text-decoration: inherit;
+  text-indent: 0;
+  text-transform: inherit;
+  text-shadow: none;
+  font-smoothing: auto;
+  vertical-align: baseline;
+  cursor: inherit;
+  white-space: inherit;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+  background: none;
+  border: 0 rgba(0, 0, 0, 0);
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+  transition: none;
+  display: block;
+  position: static;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  overflow: visible;
+  transform: none;
+}
+
+.w-webflow-badge {
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .1);
+  visibility: visible !important;
+  z-index: 2147483647 !important;
+  color: #aaadb0 !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  background-color: #fff !important;
+  border-radius: 3px !important;
+  margin: 0 !important;
+  padding: 6px !important;
+  font-size: 12px !important;
+  line-height: 14px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  position: fixed !important;
+  top: auto !important;
+  bottom: 12px !important;
+  left: auto !important;
+  right: 12px !important;
+  overflow: visible !important;
+  transform: none !important;
+}
 
 .w-webflow-badge > img {
-  visibility: hidden !important;
-  opacity: 0 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   vertical-align: middle !important;
-  display: none !important;
+  display: inline-block !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2024,6 +2103,25 @@ textarea.w-input, textarea.w-select {
   --black: #222;
 }
 
+.w-layout-blockcontainer {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .w-layout-blockcontainer {
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .w-layout-blockcontainer {
+    max-width: none;
+  }
+}
+
 body {
   color: #fff;
   background-color: #222;
@@ -2113,6 +2211,7 @@ img {
   background-position: 0 0, 38%;
   background-repeat: repeat, no-repeat;
   background-size: auto, cover;
+  margin-bottom: 65px;
 }
 
 .hero.small {
@@ -2231,8 +2330,8 @@ img {
 }
 
 .section {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  margin-top: 40px;
+  transition-property: none;
 }
 
 .content-wrapper {
@@ -2298,11 +2397,18 @@ img {
   color: #fff;
   text-align: center;
   letter-spacing: 0;
+  -webkit-text-stroke-color: #fff;
   text-transform: none;
   margin-top: 0;
   margin-bottom: 32px;
   font-size: 26px;
   font-weight: 300;
+}
+
+.section-title:hover {
+  color: #a2fffc;
+  -webkit-text-stroke-color: #d1fffd;
+  mix-blend-mode: normal;
 }
 
 .main-image {
@@ -2323,7 +2429,7 @@ img {
 }
 
 .main-heading {
-  color: #e8fbff;
+  color: #fff;
   white-space: nowrap;
   word-break: normal;
   object-fit: fill;
@@ -2342,9 +2448,13 @@ img {
   font-weight: 300;
 }
 
+.main-heading.phone {
+  display: none;
+}
+
 .heading-wrapper {
   text-align: center;
-  margin-top: 140px;
+  margin-top: 42px;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -2494,6 +2604,45 @@ img {
   padding-bottom: 0;
 }
 
+.spline {
+  height: 50vw;
+  min-height: 50px;
+  margin: -100vw -152px 168px auto;
+  padding-left: 0;
+  position: fixed;
+  top: auto;
+  bottom: 0%;
+  left: auto;
+  right: 0%;
+}
+
+.section-2 {
+  padding-bottom: 100vw;
+}
+
+.heading {
+  display: none;
+}
+
+.spline-scene {
+  opacity: 1;
+  margin: 0 -71px -12px;
+}
+
+.spline-scene-2 {
+  display: none;
+}
+
+.spline-scene-3 {
+  float: none;
+  clear: none;
+  object-fit: fill;
+  background-image: url("https://assets-global.website-files.com/65dcd1ba8c6105e7a4a30fb1/65ee4eeaca00890dd4f5cff9_fondo%20CINE.png");
+  background-position: 0 0;
+  background-size: cover;
+  display: block;
+}
+
 @media screen and (max-width: 991px) {
   .hero {
     min-height: 520px;
@@ -2517,6 +2666,7 @@ img {
 
   .menu-button {
     color: #fff;
+    margin-right: 50px;
   }
 
   .menu-button:hover {
@@ -2528,7 +2678,7 @@ img {
   }
 
   .heading-wrapper {
-    margin-top: 115px;
+    margin-top: 0;
   }
 
   .nav-menu {
@@ -2594,13 +2744,19 @@ img {
     margin-left: 40px;
     margin-right: 40px;
   }
+
+  .spline-scene, .body {
+    overflow: hidden;
+  }
 }
 
 @media screen and (max-width: 479px) {
   .hero {
+    height: 100vw;
     min-height: 500px;
-    margin-bottom: 88px;
+    margin-bottom: 155px;
     padding-bottom: 0;
+    overflow: hidden;
   }
 
   .hero.about-page {
@@ -2613,6 +2769,7 @@ img {
 
   .nav {
     height: 70px;
+    color: #29aaa6;
     text-align: center;
     background-color: rgba(8, 19, 36, 0);
     background-image: linear-gradient(rgba(4, 1, 12, .72), rgba(9, 13, 27, 0) 100%, #fff);
@@ -2621,9 +2778,22 @@ img {
   }
 
   .button {
+    margin-top: 0;
     margin-bottom: 0;
-    font-size: 9px;
-    line-height: 12px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .section {
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    margin-top: 40px;
+    display: block;
   }
 
   .section-title {
@@ -2639,7 +2809,7 @@ img {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 9px;
+    padding-top: 14px;
     display: flex;
     position: absolute;
     top: 20%;
@@ -2657,8 +2827,18 @@ img {
     line-height: 22px;
   }
 
+  .main-heading.phone {
+    font-size: 25px;
+    line-height: 27px;
+    display: none;
+  }
+
   .heading-wrapper {
-    margin-top: 144px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -68px;
+    display: flex;
   }
 
   .about-me {
@@ -2682,7 +2862,7 @@ img {
     align-self: flex-start;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 7px;
+    padding-top: 11px;
     padding-left: 0;
     padding-right: 0;
   }
@@ -2702,6 +2882,44 @@ img {
     grid-auto-columns: 1fr;
     grid-auto-flow: column dense;
     display: none;
+  }
+
+  .heading {
+    font-size: 25px;
+    display: none;
+  }
+
+  .spline-scene {
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+    flex: 0 auto;
+    margin: 0 auto;
+    display: none;
+    position: -webkit-sticky;
+    position: sticky;
+    transform: none;
+  }
+
+  .spline-scene-2 {
+    text-align: center;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    display: block;
+    overflow: hidden;
+  }
+
+  .body {
+    object-fit: contain;
+    overflow: auto;
+  }
+
+  .spline-scene-3 {
+    background-image: url("https://assets-global.website-files.com/65dcd1ba8c6105e7a4a30fb1/65ee4eeaca00890dd4f5cff9_fondo%20CINE.png");
+    background-position: 0 0;
+    background-size: cover;
+    margin-bottom: 0;
   }
 }
 
